@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+header {
+    background-color:darkgreen;
+    color:white;
+    text-align:center;
+    padding:5px;	 
+}
+nav {
+    line-height:30px;
+    background-color: #eeeeee;
+    height:300px;
+    width:100px;
+    float: left;
+    padding:5px;	      
+}
+section {
+    width:350px;
+    float:left;
+    padding:30px;	 	 
+}
+footer {
+    background-color:darkgreen;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px;	 	 
+}
+div#time {text-align: right;}
+</style>
+</head>
+<body>
+<header>
+<h1>City Gallery</h1>
+</header>
+
+<nav>
+<a href="css3london.html">London</a><br>
+<a href="css3orlando.html">Orlando</a><br>
+<strong>San Francisco</strong>
+
+</nav>
+
+<div id="time"><script language="JavaScript">
+var clockID = 0;
+function UpdateClock() {
+   if(clockID) {
+      clearTimeout(clockID);
+      clockID  = 0;
+   }
+   var tDate = new Date();
+
+   document.theClock.theTime.value = "" 
+                                   + tDate.getHours() + ":" 
+                                   + tDate.getMinutes() + ":" 
+                                   + tDate.getSeconds();
+   clockID = setTimeout("UpdateClock()", 1000);
+}
+function StartClock() {
+   clockID = setTimeout("UpdateClock()", 500);
+}
+function KillClock() {
+   if(clockID) {
+      clearTimeout(clockID);
+      clockID  = 0;
+   }
+}
+</script>
+<body onload="StartClock()" onunload="KillClock()">
+<form name="theClock">
+   <input type=text name="theTime" size=10 style="text-align: center">
+</form>
+<a target="_blank" href="http://www.htmlfreecodes.com" style="font-size: 8pt; text-decoration: none"></a>
+
+
+</div>
+
+<section>
+<h1>San Francisco</h1>
+<p>
+
+</p>
+</section>
+
+<footer>
+&copy; Mr. Singer 2016
+</footer>
+<div style="width: 250px;"><iframe style="display: block;" src="http://cdnres.willyweather.com/widget/loadView.html?id=41591" width="272" height="69" frameborder="0" scrolling="no"></iframe><a style="z-index: 1;width: 20px;height: 69px;float: right;margin: -69px 0 0 0;position: relative;text-indent: -9999em;display: block" href="http://www.willyweather.com/ca/san-francisco-county/san-francisco.html"></a></div>
+</body>
+</html>
